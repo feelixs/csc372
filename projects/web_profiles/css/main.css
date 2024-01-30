@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, serif;
+    background-color: #f1f1f1;
+    margin-left: 30px;
+}
+
+body a:hover {
+    font-weight: bold;
+}
+
+body li {
+    color: #627a50;
+}
+
+body li a {
+    color: #627a50;
+}
+
+#title {
+    color: white;
+    padding-left: 100px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #919191;
+    font-family: Fahkwang, serif;
+}
+
+footer {
+    color: white;
+    padding-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #919191;
+}
