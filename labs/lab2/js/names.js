@@ -13,9 +13,12 @@ if (hacker1.length > hacker2.length) {
     console.log(`Wow, we both have equally long names, ` + hacker2.length + ` characters!`)
 }
 
+let nameWithSpace = ""
 for (let i = 0; i < hacker1.length; i++) {
-    console.log(hacker1[i].toUpperCase())
+    nameWithSpace += hacker1[i].toUpperCase() + " "
 }
+console.log(nameWithSpace)
+
 
 let backwardsStr = ""
 for (let i = hacker2.length - 1; i >= 0; i--) {
