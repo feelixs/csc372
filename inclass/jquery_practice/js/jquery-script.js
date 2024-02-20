@@ -19,5 +19,4 @@ html.css({'background-color': 'lightgrey'});
 title.css({'font-family': 'Helvetica, serif'});
 
 
-$('li').css({'font-family': 'Arial, serif',
-                    'color': 'blue'});
+$('li').css({'font-family': 'Arial, serif', 'color': 'blue'});
