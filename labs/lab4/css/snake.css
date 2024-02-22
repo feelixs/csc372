@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+img {
+    border-radius: 6px;
+}
+
+#snake-img {
+    width: 400px;
+}
