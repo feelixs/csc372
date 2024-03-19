@@ -2,15 +2,6 @@ var http = require('http');
 var fs = require('fs');
 
 
-var index_body = "<h1>Michael Miele-Herndon</h1>\n" +
-    "<p>I am a senior at URI majoring in Computer Science from the great state of New York. In my free time I enjoy reading, hiking, and playing video games.</p>" +
-    "<h3>Favorite Movies & Books</h3>" +
-    "<ol>" +
-    "<li>Eragon (Inheritence) Trilogy</li>" +
-    "<li>The Lord of the Rings Series</li>" +
-    "<li>Star Wars Original Trilogy</li>" +
-    "</ol>"
-
 function serveStaticFile(response, path, contentType, status) {
     if (!status) {
         status = 200;
@@ -56,7 +47,21 @@ var port = 1337;
 http.createServer((request, response) => {
     let path = request.url.replace('/\/?(?:\?.*)?$/', '');
     switch (path) {
-
+        case '':
+            serveStaticFile(response, '/public/index.html', 'text/html');
+            break;
+        case '/about':
+            serveStaticFile(response, '/public/about.html', 'text/html');
+            break;
+        case '/contact':
+            serveStaticFile(response, '/public/contact.html', 'text/html');
+            break;
+        case '/img/logo.webp':
+            serveStaticFile(response, '/public/img/luna-logo.webp', 'image/webp');
+            break;
+        default:
+            serveStaticFile(response, '/public/404.html', 'text/html', 404);
+            break;
     }
 }).listen(port);
 
