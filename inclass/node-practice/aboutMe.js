@@ -35,6 +35,9 @@ http.createServer((request, response) => {
     if (request.url in routes) {
         return routes[request.url](request, response);
     } else {
+        response.writeHead(404, {
+            'Content-Type': 'text/html',
+        });
         response.end("<h1>404 Not Found</h1>");
     }
 }).listen(port);
