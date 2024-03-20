@@ -83,6 +83,9 @@ http.createServer((request, response) => {
         case '/img/x.png':
             serveStaticFile(response, '/public/img/x.png', 'image/png');
             break;
+        case '/css/style.css':
+            serveStaticFile(response, '/public/css/style.css', 'text/css');
+            break;
         default:
             serveStaticFile(response, '/public/404.html', 'text/html', 404);
             break;
