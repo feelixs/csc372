@@ -22,27 +22,6 @@ function serveStaticFile(response, path, contentType, status) {
     });
 }
 
-var routes = {
-    "/": function index(request, response) {
-        response.writeHead(200, {
-            'Content-Type': 'text/html',
-        });
-        response.end(index_body);
-    },
-    "/about": function index(request, response) {
-        response.writeHead(200, {
-            'Content-Type': 'text/html',
-        });
-        response.end("<h1>About Us</h1>");
-    },
-    "/contact": function index(request, response) {
-        response.writeHead(200, {
-            'Content-Type': 'text/html',
-        });
-        response.end("<h1>Contact Us</h1>");
-    },
-}
-
 var port = 1337;
 http.createServer((request, response) => {
     let path = request.url.replace('/\/?(?:\?.*)?$/', '');
