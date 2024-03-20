@@ -56,31 +56,31 @@ http.createServer((request, response) => {
         case '/contact':
             serveStaticFile(response, '/public/contact.html', 'text/html');
             break;
-        case '/img/404bottom.gif':
+        case '/images/404bottom.gif':
             serveStaticFile(response, '/public/img/404bottom.gif', 'image/gif');
             break;
-        case '/img/404mid.gif':
+        case '/images/404mid.gif':
             serveStaticFile(response, '/public/img/404mid.gif', 'image/gif');
             break;
-        case '/img/404top_w.jpg':
+        case '/images/404top_w.jpg':
             serveStaticFile(response, '/public/img/404top_w.jpg', 'image/jpg');
             break;
-        case '/img/blogging.png':
+        case '/images/blogging.png':
             serveStaticFile(response, '/public/img/blogging.png', 'image/png');
             break;
-        case '/img/computer-typing.jpeg':
+        case '/images/computer-typing.jpeg':
             serveStaticFile(response, '/public/img/computer-typing.jpeg', 'image/jpeg');
             break;
-        case '/img/construction.png':
+        case '/images/construction.png':
             serveStaticFile(response, '/public/img/construction.png', 'image/png');
             break;
-        case '/img/logo.png':
+        case '/images/logo.png':
             serveStaticFile(response, '/public/img/logo.png', 'image/png');
             break;
-        case '/img/merch.png':
+        case '/images/merch.png':
             serveStaticFile(response, '/public/img/merch.png', 'image/png');
             break;
-        case '/img/x.png':
+        case '/images/x.png':
             serveStaticFile(response, '/public/img/x.png', 'image/png');
             break;
         case '/css/style.css':
