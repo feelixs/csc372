@@ -47,7 +47,7 @@ var port = 1337;
 http.createServer((request, response) => {
     let path = request.url.replace('/\/?(?:\?.*)?$/', '');
     switch (path) {
-        case '':
+        case '/home':
             serveStaticFile(response, '/public/index.html', 'text/html');
             break;
         case '/about':
