@@ -36,31 +36,31 @@ http.createServer((request, response) => {
             serveStaticFile(response, '/public/contact.html', 'text/html');
             break;
         case '/images/404bottom.gif':
-            serveStaticFile(response, '/public/img/404bottom.gif', 'image/gif');
+            serveStaticFile(response, '/public/images/404bottom.gif', 'image/gif');
             break;
         case '/images/404mid.gif':
-            serveStaticFile(response, '/public/img/404mid.gif', 'image/gif');
+            serveStaticFile(response, '/public/images/404mid.gif', 'image/gif');
             break;
         case '/images/404top_w.jpg':
-            serveStaticFile(response, '/public/img/404top_w.jpg', 'image/jpg');
+            serveStaticFile(response, '/public/images/404top_w.jpg', 'image/jpg');
             break;
         case '/images/blogging.png':
-            serveStaticFile(response, '/public/img/blogging.png', 'image/png');
+            serveStaticFile(response, '/public/images/blogging.png', 'image/png');
             break;
         case '/images/computer-typing.jpeg':
-            serveStaticFile(response, '/public/img/computer-typing.jpeg', 'image/jpeg');
+            serveStaticFile(response, '/public/images/computer-typing.jpeg', 'image/jpeg');
             break;
         case '/images/construction.png':
-            serveStaticFile(response, '/public/img/construction.png', 'image/png');
+            serveStaticFile(response, '/public/images/construction.png', 'image/png');
             break;
         case '/images/logo.png':
-            serveStaticFile(response, '/public/img/logo.png', 'image/png');
+            serveStaticFile(response, '/public/images/logo.png', 'image/png');
             break;
         case '/images/merch.png':
-            serveStaticFile(response, '/public/img/merch.png', 'image/png');
+            serveStaticFile(response, '/public/images/merch.png', 'image/png');
             break;
         case '/images/x.png':
-            serveStaticFile(response, '/public/img/x.png', 'image/png');
+            serveStaticFile(response, '/public/images/x.png', 'image/png');
             break;
         case '/css/style.css':
             serveStaticFile(response, '/public/css/style.css', 'text/css');
