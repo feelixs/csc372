@@ -35,6 +35,9 @@ http.createServer((request, response) => {
         case '/contact':
             serveStaticFile(response, '/public/contact.html', 'text/html');
             break;
+        case '/under-construction':
+            serveStaticFile(response, '/public/under-construction.html', 'text/html');
+            break;
         case '/images/404bottom.gif':
             serveStaticFile(response, '/public/images/404bottom.gif', 'image/gif');
             break;
