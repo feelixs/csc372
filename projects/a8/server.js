@@ -43,6 +43,16 @@ http.createServer((request, response) => {
             console.log(`loading css file: ${cspath}`)
             serveStaticFile(response, cspath, 'text/css');
             break;
+        case path.startsWith('/static') && path.endsWith('.webp'):
+            let webppath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
+            console.log(`loading css file: ${webppath}`)
+            serveStaticFile(response, webppath, 'image/webp');
+            break;
+        case path.startsWith('/static') && path.endsWith('.png'):
+            let pngpath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
+            console.log(`loading css file: ${pngpath}`)
+            serveStaticFile(response, pngpath, 'image/png');
+            break;
         case path.startsWith('/static') && path.endsWith('.js'):
             let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
             console.log(`loading js file: ${jspath}`)
