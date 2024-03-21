@@ -38,29 +38,29 @@ http.createServer((request, response) => {
         case '/gallery':
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
-        case 'static/css/main.css':
+        case '/static/css/main.css':
             serveStaticFile(response, '/static/css/main.css', 'text/css');
             break;
-        case 'static/js/home.js':
+        case '/static/js/home.js':
             serveStaticFile(response, '/static/js/home.js', 'application/javascript');
             break;
-        case 'static/js/change-language.js':
+        case '/static/js/change-language.js':
             serveStaticFile(response, '/static/js/change-language.js', 'application/javascript');
             break;
         default:
             console.log("trying to server static file: " + path);
-            if (path.startsWith('static') && path.endsWith('.css')) {
-                serveStaticFile(response, "/" + path, 'text/css');
-            } else if (path.startsWith('static') && path.endsWith('.webp')) {
-                serveStaticFile(response, "/" + path, 'image/webp');
-            } else if (path.startsWith('static') && path.endsWith('.png')) {
-                serveStaticFile(response, "/" + path, 'image/png');
-            } else if (path.startsWith('static') && path.endsWith('.js')) {
-                serveStaticFile(response, "/" + path, 'application/javascript');
-            } else if (path.startsWith('static/data/html')) {
-                serveStaticFile(response, "/" + path, 'text/html');
-            } else if (path.startsWith('static/data/json')) {
-                serveStaticFile(response, "/" + path, 'text/json');
+            if (path.startsWith('/static') && path.endsWith('.css')) {
+                serveStaticFile(response, path, 'text/css');
+            } else if (path.startsWith('/static') && path.endsWith('.webp')) {
+                serveStaticFile(response, path, 'image/webp');
+            } else if (path.startsWith('/static') && path.endsWith('.png')) {
+                serveStaticFile(response, path, 'image/png');
+            } else if (path.startsWith('/static') && path.endsWith('.js')) {
+                serveStaticFile(response, path, 'application/javascript');
+            } else if (path.startsWith('/static/data/html')) {
+                serveStaticFile(response, path, 'text/html');
+            } else if (path.startsWith('/static/data/json')) {
+                serveStaticFile(response, path, 'text/json');
             }
             
             console.log(`404: ${path}`);
