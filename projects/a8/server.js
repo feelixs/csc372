@@ -31,6 +31,13 @@ var routes = {
     '/static/images/P1001197-cropped.webp': ['/static/images/P1001197-cropped.webp', 'image/webp'],
     '/static/images/P1001427-cropped.webp': ['/static/images/P1001427-cropped.webp', 'image/webp'],
 
+    '/static/data/html/copyright/en.html': ['/static/data/html/copyright/en.html', 'text/html'],
+    '/static/data/html/copyright/es.html': ['/static/data/html/copyright/es.html', 'text/html'],
+    '/static/data/html/footer/en.html': ['/static/data/html/footer/en.html', 'text/html'],
+    '/static/data/html/footer/es.html': ['/static/data/html/footer/es.html', 'text/html'],
+
+    '/static/data/json/gallery.json': ['/static/data/json/gallery.json', 'text/json'],
+    
     '/static/data/xml/home.xml': ['/static/data/xml/home.xml', 'text/xml'],
     '/static/data/xml/contact.xml': ['/static/data/xml/contact.xml', 'text/xml'],
     '/static/data/xml/bios.xml': ['/static/data/xml/bios.xml', 'text/xml'],
