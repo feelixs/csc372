@@ -48,6 +48,7 @@ http.createServer((request, response) => {
             serveStaticFile(response, '/static/js/change-language.js', 'application/javascript');
             break;
         default:
+            console.log("trying to server static file: " + path);
             if (path.startsWith('/static') && path.endsWith('.css')) {
                 serveStaticFile(response, path, 'text/css');
             } else if (path.startsWith('/static') && path.endsWith('.webp')) {
