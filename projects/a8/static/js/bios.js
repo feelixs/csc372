@@ -1,5 +1,6 @@
 var biosTextFields = []
 var bioDualImages = []
+var domain = 'https://trioluna.com';
 
 $(document).ready(function () {
     /*
@@ -10,8 +11,8 @@ $(document).ready(function () {
     biosTextFields.push(new XMLDualLangTextField(`/static/data/xml/bios.xml`, 2, $('#nicolas-bio'), '&ensp;&ensp;&ensp;&ensp;'));
     biosTextFields.push(new HTMLDualLangTextField(`/static/data/html/footer`, $('#footer-text')));
     biosTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
-    bioDualImages.push(new DualLangImage('https://trioluna.com/static/images/buttons/globe-white-en.webp',
-        'https://trioluna.com/static/images/buttons/globe-white-es.webp', $('#change-language-img')))
+    bioDualImages.push(new DualLangImage(`${domain}/static/images/buttons/globe-white-en.webp`,
+        `${domain}/static/images/buttons/globe-white-es.webp`, $('#change-language-img')))
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
