@@ -55,7 +55,7 @@ http.createServer((request, response) => {
                 // /static/js/change-language.js
                 let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
                 console.log(`loading js file: ${jspath}`);
-                serveStaticFile(response, jspath, 'text/javascript');
+                serveStaticFile(response, jspath, 'application/javascript');
             } else if (path.startsWith('/static/data/html')) {
                 console.log(`serving html api file: ${path}`);
                 serveStaticFile(response, path, 'text/html');
