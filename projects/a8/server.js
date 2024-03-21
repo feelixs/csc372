@@ -38,6 +38,21 @@ http.createServer((request, response) => {
         case '/gallery':
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
+        case '/static/css/nav.css':
+            serveStaticFile(response, '/static/css/nav.css', 'text/css');
+            break;
+        case '/static/css/home.css':
+            serveStaticFile(response, '/static/css/home.css', 'text/css');
+            break;
+        case '/static/css/main.css':
+            serveStaticFile(response, '/static/css/main.css', 'text/css');
+            break;
+        case '/static/css/flex-boxes.css':
+            serveStaticFile(response, '/static/css/flex-boxes.css', 'text/css');
+            break;
+        case '/static/css/background.css':
+            serveStaticFile(response, '/static/css/background.css', 'text/css');
+            break;
         case '/static/images/webp/luna-logo.webp':
             serveStaticFile(response, '/static/images/webp/luna-logo.webp', 'image/webp');
             break;
@@ -55,6 +70,12 @@ http.createServer((request, response) => {
             break;
         case '/static/images/webp/felix-logo-white.webp':
             serveStaticFile(response, '/static/images/webp/felix-logo-white.webp', 'image/webp');
+            break;
+        case '/static/js/change-language.js':
+            serveStaticFile(response, '/static/js/change-language.js', 'text/javascript');
+            break;
+        case '/static/js/home.js':
+            serveStaticFile(response, '/static/js/home.js', 'text/javascript');
             break;
         default:
             console.log(`404: ${path}`);
