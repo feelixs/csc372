@@ -2,6 +2,28 @@ var http = require('http');
 var fs = require('fs');
 
 
+var routes = {
+    '/home': ['/templates/index.html', 'text/html'], '/bios': ['/templates/bios.html', 'text/html'],
+    '/contact': ['/templates/contact.html', 'text/html'], '/gallery': ['/templates/gallery.html', 'text/html'],
+    '/static/css/nav.css': ['/static/css/nav.css', 'text/css'], '/static/css/home.css': ['/static/css/home.css', 'text/css'],
+    '/static/css/main.css': ['/static/css/main.css', 'text/css'], '/static/css/flex-boxes.css': ['/static/css/flex-boxes.css', 'text/css'],
+    '/static/css/background.css': ['/static/css/background.css', 'text/css'], '/static/images/webp/luna-logo.webp':
+        ['/static/images/webp/luna-logo.webp', 'image/webp'], '/static/images/webp/globe-white-es.webp':
+        ['/static/images/webp/globe-white-es.webp', 'image/webp'], '/static/images/webp/globe-white-en.webp':
+        ['/static/images/webp/globe-white-en.webp', 'image/webp'], '/static/images/webp/youtube-white.webp':
+        ['/static/images/webp/youtube-white.webp', 'image/webp'], '/static/images/webp/instagram-white.webp':
+        ['/static/images/webp/instagram-white.webp', 'image/webp'], '/static/images/webp/felix-logo-white.webp':
+        ['/static/images/webp/felix-logo-white.webp', 'image/webp'], '/static/images/desktop/P1001211.webp':
+        ['/static/images/webp/P1001211.webp', 'image/webp'], '/static/images/desktop/P1001446.webp':
+        ['/static/images/webp/P1001446.webp', 'image/webp'], '/static/images/desktop/468D91AF.webp':
+        ['/static/images/webp/468D91AF.webp', 'image/webp'], '/static/data/xml/home.xml':
+        ['/static/data/xml/home.xml', 'text/xml'], '/static/fonts/Pridi/Pridi-Light.ttf':
+        ['/static/fonts/Pridi/Pridi-Light.ttf', 'application/x-font-ttf'], '/static/fonts/Outfit/Outfit-VariableFont_wght.ttf':
+        ['/static/fonts/Outfit/Outfit-VariableFont_wght.ttf', 'application/x-font-ttf'], '/static/js/change-language.js':
+        ['/static/js/change-language.js', 'text/javascript'], '/static/js/home.js': ['/static/js/home.js', 'text/javascript']
+};
+
+
 function serveStaticFile(response, path, contentType, status) {
     if (!status) {
         status = 200;
@@ -25,80 +47,12 @@ function serveStaticFile(response, path, contentType, status) {
 var port = 1337;
 http.createServer((request, response) => {
     let path = request.url.replace('/\/?(?:\?.*)?$/', '');
-    switch (path) {
-        case '/home':
-            serveStaticFile(response, '/templates/index.html', 'text/html');
-            break;
-        case '/bios':
-            serveStaticFile(response, '/templates/bios.html', 'text/html');
-            break;
-        case '/contact':
-            serveStaticFile(response, '/templates/contact.html', 'text/html');
-            break;
-        case '/gallery':
-            serveStaticFile(response, '/templates/gallery.html', 'text/html');
-            break;
-        case '/static/css/nav.css':
-            serveStaticFile(response, '/static/css/nav.css', 'text/css');
-            break;
-        case '/static/css/home.css':
-            serveStaticFile(response, '/static/css/home.css', 'text/css');
-            break;
-        case '/static/css/main.css':
-            serveStaticFile(response, '/static/css/main.css', 'text/css');
-            break;
-        case '/static/css/flex-boxes.css':
-            serveStaticFile(response, '/static/css/flex-boxes.css', 'text/css');
-            break;
-        case '/static/css/background.css':
-            serveStaticFile(response, '/static/css/background.css', 'text/css');
-            break;
-        case '/static/images/webp/luna-logo.webp':
-            serveStaticFile(response, '/static/images/webp/luna-logo.webp', 'image/webp');
-            break;
-        case '/static/images/webp/globe-white-es.webp':
-            serveStaticFile(response, '/static/images/webp/globe-white-es.webp', 'image/webp');
-            break;
-        case '/static/images/webp/globe-white-en.webp':
-            serveStaticFile(response, '/static/images/webp/globe-white-en.webp', 'image/webp');
-            break;
-        case '/static/images/webp/youtube-white.webp':
-            serveStaticFile(response, '/static/images/webp/youtube-white.webp', 'image/webp');
-            break;
-        case '/static/images/webp/instagram-white.webp':
-            serveStaticFile(response, '/static/images/webp/instagram-white.webp', 'image/webp');
-            break;
-        case '/static/images/webp/felix-logo-white.webp':
-            serveStaticFile(response, '/static/images/webp/felix-logo-white.webp', 'image/webp');
-            break;
-        case '/static/images/desktop/P1001211.webp':
-            serveStaticFile(response, '/static/images/webp/P1001211.webp', 'image/webp');
-            break;
-        case '/static/images/desktop/P1001446.webp':
-            serveStaticFile(response, '/static/images/webp/P1001446.webp', 'image/webp');
-            break;
-        case '/static/images/desktop/468D91AF.webp':
-            serveStaticFile(response, '/static/images/webp/468D91AF.webp', 'image/webp');
-            break;
-        case '/static/data/xml/home.xml':
-            serveStaticFile(response, '/static/data/xml/home.xml', 'text/xml');
-            break;
-        case '/static/fonts/Pridi/Pridi-Light.ttf':
-            serveStaticFile(response, '/static/fonts/Pridi/Pridi-Light.ttf', 'application/x-font-ttf');
-            break;
-        case '/static/fonts/Outfit/Outfit-VariableFont_wght.ttf':
-            serveStaticFile(response, '/static/fonts/Outfit/Outfit-VariableFont_wght.ttf', 'application/x-font-ttf');
-            break;
-        case '/static/js/change-language.js':
-            serveStaticFile(response, '/static/js/change-language.js', 'text/javascript');
-            break;
-        case '/static/js/home.js':
-            serveStaticFile(response, '/static/js/home.js', 'text/javascript');
-            break;
-        default:
-            console.log(`404: ${path}`);
-            serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
-            break;
+    try {
+        serveStaticFile(response, routes[path][0], routes[path][1]);
+        console.log(`200: ${path}`);
+    } catch (error) {
+        console.log(`404: ${path}`);
+        serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
     }
 }).listen(port);
 
