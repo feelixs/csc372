@@ -9,8 +9,8 @@ $(document).ready(function () {
     galTextFields.push(new HTMLDualLangTextField( `/static/data/html/copyright`, $('#copyright')));
     /* when we fetch the text from the server, we need a fullpath that included 'luna'.
      when we set the image div in a duallangimage, we don't need 'luna' */
-    galDualImages.push(new DualLangImage(`${domain}/static/images/webp/globe-white-en.webp`,
-        `${domain}/static/images/webp/globe-white-es.webp`, $('#change-language-img')))
+    galDualImages.push(new DualLangImage(`${domain}/static/images/globe-white-en.webp`,
+        `${domain}/static/images/globe-white-es.webp`, $('#change-language-img')))
 
     // load the current langague from the document's 'lang' attribute, which was set by the server (django)
     var currentLang = $('html').attr('lang');
