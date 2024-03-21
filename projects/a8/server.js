@@ -8,7 +8,8 @@ var routes = {
     '/static/css/nav.css': ['/static/css/nav.css', 'text/css'], '/static/css/home.css': ['/static/css/home.css', 'text/css'],
     '/static/css/main.css': ['/static/css/main.css', 'text/css'], '/static/css/flex-boxes.css': ['/static/css/flex-boxes.css', 'text/css'],
     '/static/css/background.css': ['/static/css/background.css', 'text/css'], '/static/images/webp/luna-logo.webp':
-        ['/static/images/webp/luna-logo.webp', 'image/webp'], '/static/images/webp/globe-white-es.webp':
+        ['/static/images/webp/luna-logo.webp', 'image/webp'], '/static/images/logos/luna-logo.webp':
+        ['/static/images/logos/luna-logo.webp', 'image/webp'], '/static/images/webp/globe-white-es.webp':
         ['/static/images/webp/globe-white-es.webp', 'image/webp'], '/static/images/webp/globe-white-en.webp':
         ['/static/images/webp/globe-white-en.webp', 'image/webp'], '/static/images/webp/youtube-white.webp':
         ['/static/images/webp/youtube-white.webp', 'image/webp'], '/static/images/webp/instagram-white.webp':
@@ -49,7 +50,6 @@ http.createServer((request, response) => {
     let path = request.url.replace('/\/?(?:\?.*)?$/', '');
     try {
         serveStaticFile(response, routes[path][0], routes[path][1]);
-        console.log(`200: ${path}`);
     } catch (error) {
         console.log(`404: ${path}`);
         serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
