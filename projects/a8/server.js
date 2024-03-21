@@ -33,10 +33,15 @@ http.createServer((request, response) => {
             serveStaticFile(response, '/templates/bios.html', 'text/html');
             break;
         case '/contact':
-            serveStaticFile(response, '/public/contact.html', 'text/html');
+            serveStaticFile(response, '/templates/contact.html', 'text/html');
             break;
         case '/gallery':
-            serveStaticFile(response, '/public/gallery.html', 'text/html');
+            serveStaticFile(response, '/templates/gallery.html', 'text/html');
+            break;
+        case path.startsWith('/static') && path.endsWith('.css'):
+            let cspath = `${path.substring(path.lastIndexOf("/"), path.length)}.css`;
+            console.log(`loading css file: ${cspath}`)
+            serveStaticFile(response, cspath, 'text/css');
             break;
         default:
             serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
