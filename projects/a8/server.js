@@ -37,7 +37,7 @@ var routes = {
     '/static/data/html/footer/es.html': ['/static/data/html/footer/es.html', 'text/html'],
 
     '/static/data/json/gallery.json': ['/static/data/json/gallery.json', 'text/json'],
-    
+
     '/static/data/xml/home.xml': ['/static/data/xml/home.xml', 'text/xml'],
     '/static/data/xml/contact.xml': ['/static/data/xml/contact.xml', 'text/xml'],
     '/static/data/xml/bios.xml': ['/static/data/xml/bios.xml', 'text/xml'],
