@@ -1,7 +1,7 @@
 // we need to set this here to have its scope be everywhere, we'll change it later
 // - each webpage has its own associated script, which will set the currentlang in document.ready
 var currentLang = "en";
-
+var domain = 'https://trioluna.com';
 
 function toggleLanguage() {
     /*

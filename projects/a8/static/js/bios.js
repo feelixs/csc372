@@ -1,6 +1,5 @@
 var biosTextFields = []
 var bioDualImages = []
-var domain = 'https://trioluna.com';
 
 $(document).ready(function () {
     /*
