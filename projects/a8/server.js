@@ -39,9 +39,14 @@ http.createServer((request, response) => {
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
         case path.startsWith('/static') && path.endsWith('.css'):
-            let cspath = `${path.substring(path.lastIndexOf("/"), path.length)}.css`;
+            let cspath = `/static/css${path.substring(path.lastIndexOf("/"), path.length)}`;
             console.log(`loading css file: ${cspath}`)
             serveStaticFile(response, cspath, 'text/css');
+            break;
+        case path.startsWith('/static') && path.endsWith('.js'):
+            let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
+            console.log(`loading js file: ${jspath}`)
+            serveStaticFile(response, jspath, 'application/javascript');
             break;
         default:
             serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
