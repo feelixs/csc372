@@ -38,29 +38,21 @@ http.createServer((request, response) => {
         case '/gallery':
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
+        case '/static/css/main.css':
+            serveStaticFile(response, '/static/css/main.css', 'text/css');
+            break;
         default:
             if (path.startsWith('/static') && path.endsWith('.css')) {
-                let cspath = `/static/css${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading css file: ${cspath}`);
-                serveStaticFile(response, cspath, 'text/css');
+                serveStaticFile(response, path, 'text/css');
             } else if (path.startsWith('/static') && path.endsWith('.webp')) {
-                let webppath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading webp file: ${webppath}`);
-                serveStaticFile(response, webppath, 'image/webp');
+                serveStaticFile(response, path, 'image/webp');
             } else if (path.startsWith('/static') && path.endsWith('.png')) {
-                let pngpath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading png file: ${pngpath}`);
-                serveStaticFile(response, pngpath, 'image/png');
+                serveStaticFile(response, path, 'image/png');
             } else if (path.startsWith('/static') && path.endsWith('.js')) {
-                // /static/js/change-language.js
-                let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading js file: ${jspath}`);
-                serveStaticFile(response, jspath, 'application/javascript');
+                serveStaticFile(response, path, 'application/javascript');
             } else if (path.startsWith('/static/data/html')) {
-                console.log(`serving html api file: ${path}`);
                 serveStaticFile(response, path, 'text/html');
             } else if (path.startsWith('/static/data/json')) {
-                console.log(`serving json api file: ${path}`);
                 serveStaticFile(response, path, 'text/json');
             }
             
