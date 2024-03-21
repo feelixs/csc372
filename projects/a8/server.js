@@ -45,11 +45,11 @@ http.createServer((request, response) => {
                 serveStaticFile(response, cspath, 'text/css');
             } else if (path.startsWith('/static') && path.endsWith('.webp')) {
                 let webppath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading css file: ${webppath}`);
+                console.log(`loading webp file: ${webppath}`);
                 serveStaticFile(response, webppath, 'image/webp');
             } else if (path.startsWith('/static') && path.endsWith('.png')) {
                 let pngpath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-                console.log(`loading css file: ${pngpath}`);
+                console.log(`loading png file: ${pngpath}`);
                 serveStaticFile(response, pngpath, 'image/png');
             } else if (path.startsWith('/static') && path.endsWith('.js')) {
                 // /static/js/change-language.js
