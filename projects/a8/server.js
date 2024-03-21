@@ -38,36 +38,32 @@ http.createServer((request, response) => {
         case '/gallery':
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
-        case path.startsWith('/static') && path.endsWith('.css'):
-            let cspath = `/static/css${path.substring(path.lastIndexOf("/"), path.length)}`;
-            console.log(`loading css file: ${cspath}`);
-            serveStaticFile(response, cspath, 'text/css');
-            break;
-        case path.startsWith('/static') && path.endsWith('.webp'):
-            let webppath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-            console.log(`loading css file: ${webppath}`);
-            serveStaticFile(response, webppath, 'image/webp');
-            break;
-        case path.startsWith('/static') && path.endsWith('.png'):
-            let pngpath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
-            console.log(`loading css file: ${pngpath}`);
-            serveStaticFile(response, pngpath, 'image/png');
-            break;
-        case path.startsWith('/static') && path.endsWith('.js'):
-            // /static/js/change-language.js
-            let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
-            console.log(`loading js file: ${jspath}`);
-            serveStaticFile(response, jspath, 'text/javascript');
-            break;
-        case path.startsWith('/static/data/html'):
-            console.log(`serving html api file: ${path}`);
-            serveStaticFile(response, path, 'text/html');
-            break;
-        case path.startsWith('/static/data/json'):
-            console.log(`serving json api file: ${path}`);
-            serveStaticFile(response, path, 'text/json');
-            break;
         default:
+            if (path.startsWith('/static') && path.endsWith('.css')) {
+                let cspath = `/static/css${path.substring(path.lastIndexOf("/"), path.length)}`;
+                console.log(`loading css file: ${cspath}`);
+                serveStaticFile(response, cspath, 'text/css');
+            } else if (path.startsWith('/static') && path.endsWith('.webp')) {
+                let webppath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
+                console.log(`loading css file: ${webppath}`);
+                serveStaticFile(response, webppath, 'image/webp');
+            } else if (path.startsWith('/static') && path.endsWith('.png')) {
+                let pngpath = `/static/images/webp${path.substring(path.lastIndexOf("/"), path.length)}`;
+                console.log(`loading css file: ${pngpath}`);
+                serveStaticFile(response, pngpath, 'image/png');
+            } else if (path.startsWith('/static') && path.endsWith('.js')) {
+                // /static/js/change-language.js
+                let jspath = `/static/js${path.substring(path.lastIndexOf("/"), path.length)}`;
+                console.log(`loading js file: ${jspath}`);
+                serveStaticFile(response, jspath, 'text/javascript');
+            } else if (path.startsWith('/static/data/html')) {
+                console.log(`serving html api file: ${path}`);
+                serveStaticFile(response, path, 'text/html');
+            } else if (path.startsWith('/static/data/json')) {
+                console.log(`serving json api file: ${path}`);
+                serveStaticFile(response, path, 'text/json');
+            }
+            
             console.log(`404: ${path}`);
             serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
             break;
@@ -75,3 +71,6 @@ http.createServer((request, response) => {
 }).listen(port);
 
 console.log(`Listening... Go to http://localhost:${port}`);
+
+
+
