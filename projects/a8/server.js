@@ -40,6 +40,7 @@ var routes = {
     '/static/js/change-language.js': ['/static/js/change-language.js', 'application/javascript'],
     '/static/js/home.js': ['/static/js/home.js', 'application/javascript'],
     '/static/js/bios.js': ['/static/js/bios.js', 'application/javascript'],
+    '/static/js/gallery.js': ['/static/js/gallery.js', 'application/javascript'],
     '/static/js/contact.js': ['/static/js/contact.js', 'application/javascript'],
 };
 
