@@ -41,6 +41,12 @@ http.createServer((request, response) => {
         case '/static/css/main.css':
             serveStaticFile(response, '/static/css/main.css', 'text/css');
             break;
+        case '/static/js/home.js':
+            serveStaticFile(response, '/static/js/home.js', 'application/javascript');
+            break;
+        case '/static/js/change-language.js':
+            serveStaticFile(response, '/static/js/change-language.js', 'application/javascript');
+            break;
         default:
             if (path.startsWith('/static') && path.endsWith('.css')) {
                 serveStaticFile(response, path, 'text/css');
