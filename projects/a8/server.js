@@ -38,22 +38,25 @@ http.createServer((request, response) => {
         case '/gallery':
             serveStaticFile(response, '/templates/gallery.html', 'text/html');
             break;
+        case '/static/images/webp/luna-logo.webp':
+            serveStaticFile(response, '/static/images/webp/luna-logo.webp', 'image/webp');
+            break;
+        case '/static/images/webp/globe-white-es.webp':
+            serveStaticFile(response, '/static/images/webp/globe-white-es.webp', 'image/webp');
+            break;
+        case '/static/images/webp/globe-white-en.webp':
+            serveStaticFile(response, '/static/images/webp/globe-white-en.webp', 'image/webp');
+            break;
+        case '/static/images/webp/youtube-white.webp':
+            serveStaticFile(response, '/static/images/webp/youtube-white.webp', 'image/webp');
+            break;
+        case '/static/images/webp/instagram-white.webp':
+            serveStaticFile(response, '/static/images/webp/instagram-white.webp', 'image/webp');
+            break;
+        case '/static/images/webp/felix-logo-white.webp':
+            serveStaticFile(response, '/static/images/webp/felix-logo-white.webp', 'image/webp');
+            break;
         default:
-            console.log("trying to server static file: " + path);
-            if (path.startsWith('/static') && path.endsWith('.css')) {
-                serveStaticFile(response, path, 'text/css');
-            } else if (path.startsWith('/static') && path.endsWith('.webp')) {
-                serveStaticFile(response, path, 'image/webp');
-            } else if (path.startsWith('/static') && path.endsWith('.png')) {
-                serveStaticFile(response, path, 'image/png');
-            } else if (path.startsWith('/static') && path.endsWith('.js')) {
-                serveStaticFile(response, path, 'application/javascript');
-            } else if (path.startsWith('/static/data/html')) {
-                serveStaticFile(response, path, 'text/html');
-            } else if (path.startsWith('/static/data/json')) {
-                serveStaticFile(response, path, 'text/json');
-            }
-            
             console.log(`404: ${path}`);
             serveStaticFile(response, '/templates/errors/404.html', 'text/html', 404);
             break;
