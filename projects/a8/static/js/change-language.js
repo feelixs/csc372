@@ -1,7 +1,7 @@
 // we need to set this here to have its scope be everywhere, we'll change it later
 // - each webpage has its own associated script, which will set the currentlang in document.ready
 var currentLang = "en";
-var domain = 'https://trioluna.com';
+var domain = 'https://trioluna.onrender.com';
 
 function toggleLanguage() {
     /*
@@ -15,20 +15,6 @@ function toggleLanguage() {
     }
 
     console.log(`Language changed from ${oldLang} to ${currentLang}`)
-
-    /* TODO: will implement in the future
-    // save the user's current language on the server (cookie)
-    let setLangXHR = new XMLHttpRequest();
-    setLangXHR.onload = function () {
-        if (setLangXHR.status === 200) {
-            console.log(`Cached '${currentLang}' as the user's current language`)
-        } else {
-            console.log(`Error caching '${currentLang}' as the user's current language`)
-        }
-    }
-    setLangXHR.open('POST', `https://trioluna.com/api/set-language?language=${currentLang}`, true);
-    setLangXHR.send(null);
-    */
 
     document.documentElement.lang = currentLang; // update the page's lang attribute
     loadContentInLang(currentLang);
@@ -67,7 +53,7 @@ function HTMLDualLangTextField(baseDir, element) {
                 throw new Error(`${thisObj.xmlFile} - error fetching file`);
             }
         }
-        xhr.open('GET', `https://trioluna.com${this.baseDir}/${lang}.html`, true);
+        xhr.open('GET', `${domain}${this.baseDir}/${lang}.html`, true);
         xhr.send(null);
     }
     return this
