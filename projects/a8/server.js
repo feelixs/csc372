@@ -71,6 +71,24 @@ http.createServer((request, response) => {
         case '/static/images/webp/felix-logo-white.webp':
             serveStaticFile(response, '/static/images/webp/felix-logo-white.webp', 'image/webp');
             break;
+        case '/static/images/desktop/P1001211.webp':
+            serveStaticFile(response, '/static/images/webp/P1001211.webp', 'image/webp');
+            break;
+        case '/static/images/desktop/P1001446.webp':
+            serveStaticFile(response, '/static/images/webp/P1001446.webp', 'image/webp');
+            break;
+        case '/static/images/desktop/468D91AF.webp':
+            serveStaticFile(response, '/static/images/webp/468D91AF.webp', 'image/webp');
+            break;
+        case '/static/data/xml/home.xml':
+            serveStaticFile(response, '/static/data/xml/home.xml', 'text/xml');
+            break;
+        case '/static/fonts/Pridi/Pridi-Light.ttf':
+            serveStaticFile(response, '/static/fonts/Pridi/Pridi-Light.ttf', 'application/x-font-ttf');
+            break;
+        case '/static/fonts/Outfit/Outfit-VariableFont_wght.ttf':
+            serveStaticFile(response, '/static/fonts/Outfit/Outfit-VariableFont_wght.ttf', 'application/x-font-ttf');
+            break;
         case '/static/js/change-language.js':
             serveStaticFile(response, '/static/js/change-language.js', 'text/javascript');
             break;
