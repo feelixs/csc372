@@ -3,5 +3,4 @@ projects/lab2_debugActivity
 hw/
 *.DS_Store
 projects/express_practice/node_modules/
-projects/express_practice/package.json
-projects/express_practice/package-lock.json
+projects/handlebars_practice/node_modules/
