@@ -19,9 +19,15 @@ app.get('/unicorn', function(req, res) {
 });
 
 // 404 page
-app.get('/*', function(req, res) {
-    res.render('404', {title: '404'});
+app.use(function(req, res) {
+    res.status(404);
+    res.render('404');
+});
 
+//500 page
+app.use(function(req, res, next) {
+    res.status(500);
+    res.render('500');
 });
 
 app.listen(port, function() {
