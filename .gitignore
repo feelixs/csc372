@@ -8,3 +8,5 @@ projects/handlebars_practice/node_modules/
 projects/handlebars_practice/package-lock.json
 labs/lab_express/node_modules/
 labs/lab_express/package-lock.json
+labs/rhody_handlebars/node_modules/
+labs/rhody_handlebars/package-lock.json
