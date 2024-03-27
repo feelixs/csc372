@@ -2,15 +2,36 @@ const express = require('express');
 const app = express();
 const port = 1337;
 
+app.get('/', function(request, response) {
+    response.type('text/plain');
+
+    response.send('Rhody Travel');
+});
+
+
+app.get('/index', function(request, response) {
+    response.type('text/plain');
+
+    response.send('Rhody Travel');
+});
+
+
+app.get('/about', function(request, response) {
+    response.type('text/plain');
+
+    response.send('About Rhody Travel');
+});
+
+
 app.use(function(request, response){
 	// tell the browser that the data is in plaintext
-	response.type('text/html');
+	response.type('text/plain');
 
 	// tell the browser the route cannot be found
 	response.status(404);
 
 	// write that the page cannot be found to the body of the page
-	response.sendFile(__dirname + '/public/404.html');
+	response.send('Page not found');
 });
 
 app.use(function(err, request, response, next){
@@ -18,13 +39,13 @@ app.use(function(err, request, response, next){
 	console.error(err.stack);
 
 	// tell the browser that the data is in plaintext
-	response.type('text/html');
+	response.type('text/plain');
 
-	// tell the browser that there was an internal server error
+	// tell the browser the route cannot be found
 	response.status(500);
 
-	// write there was an internal server error to body of the page
-	response.sendFile(__dirname + '/public/500.html');
+	// write that the page cannot be found to the body of the page
+	response.send('Internal Server Error');
 });
 
 app.listen(port, function() {
