@@ -12,3 +12,5 @@ labs/rhody_handlebars/node_modules/
 labs/rhody_handlebars/package-lock.json
 projects/a9/express/node_modules/
 projects/a9/express/package-lock.json
+projects/a9/handlebars/node_modules/
+projects/a9/handlebars/package-lock.json
