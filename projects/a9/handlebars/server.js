@@ -6,7 +6,7 @@ var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 app.get('/', function(req, res) {
     res.redirect('/home');
